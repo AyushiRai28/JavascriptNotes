@@ -26,3 +26,12 @@ let z = 7;
 console.log(z)
 
 // if this was done with var , it would show the latest given value, var is globally swwitched. Let is locally.
+
+let o = {
+    "name":"Harry",
+    "job code": 5600
+}
+
+console.assertlog(o)
+o.salary = "100crores"
+console.assertlog(o)
