@@ -17,3 +17,22 @@ cont = document.body.childNodes[1]
 cont.lastElementChild
 <div class=​"box">​Box 5​</div>​ 
 */
+
+let boxes = document.getElementsByClassName("box")
+console.log(boxes)
+
+boxes[2].style.backgroundColor = "red"
+
+document.getElementById("blue").style.backgroundColor= "blue"
+
+document.querySelector(".box").style.backgroundColor = "green";
+// selects first element with class box
+
+//this create a collection and properties can not be set to a HTML collection 
+document.querySelectorAll(".box")
+//how to apply
+document.querySelectorAll(".box").forEach(e=>{
+    e.style.backgroundColor="pink"
+})
+
+
