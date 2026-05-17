@@ -9,7 +9,7 @@ let a = prompt("Enter the number you want to find factorial of : ")
 // alert(`the result is ${fact}`)
 
 let arr=[]
-for (let i = 1; i < a; i++) {
+for (let i = 1; i <= a; i++) {
     arr.push(i)
     
 }
@@ -20,3 +20,4 @@ const red = (a ,b) =>{
 }
 
 console.log(arr.reduce(red))
+
