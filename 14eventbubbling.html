@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+</head>
+<body>
+    <div class="container">
+        <span class="childcontainer">
+            <div class="child">
+                I am a vhild
+            </div>
+        </span>
+    </div>
+
+    <script>
+        document.querySelector(".child").addEventListener("contextmenu", ()=>{
+            alert("Child was clicked")
+
+        })
+
+
+        document.querySelector(".childContainer").addEventListener("contextmenu", ()=>{
+            alert("childcontainer was clicked")
+        })
+
+
+        document.querySelector(".container").addEventListener("contextmenu", ()=>{
+            alert("Container was clicked")
+        })
+        </script>
+</body>
+</html>
