@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+    <style>
+        .child{
+            background-color: aqua;
+            border: 2px solid black;
+            cursor: pointer;
+            margin: 14px;
+            padding: 14px;
+        }
+
+        .childcontainer{
+            margin: 14px;
+            padding: 14px;
+            background-color: bisque;
+        }
+
+        .container{
+            margin: 14px;
+            padding: 14px;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="childcontainer">
+            <div class="child">
+                I am a vhild
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.querySelector(".child").addEventListener("contextmenu", (e)=>{
+            e.stopPropagation()
+            alert("Child was clicked")
+            
+        })
+        
+        
+        document.querySelector(".childcontainer").addEventListener("contextmenu", (e)=>{
+            e.stopPropagation()
+            alert("childcontainer was clicked")
+        })
+        
+        
+        document.querySelector(".container").addEventListener("contextmenu", (e)=>{
+            e.stopPropagation()
+            alert("Container was clicked")})
+            // <!-- here if we cliick on child , childcontainer and container are alsoo clicked and this is called bubbling 
+            // if you dont want this stop the propogation eith e.stopPropagation()-->
+           
+           
+            // <!-- if i want a thing to occur repeatedly -->
+
+            function getRandomCOlor(){
+                let val1 = Math.ceil(0 + Math.random()*255);
+                let val2 = Math.ceil(0 + Math.random()*255);
+                let val3 = Math.ceil(0 + Math.random()*255);
+                return `rgb(${val1} , ${val2}, ${val3})`
+            } 
+
+
+            setInterval(()=>{
+                document.querySelector(".childcontainer").style.background= getRandomCOlor()
+            },1000);
+       
+
+
+            //does trhe same thing as
+            //  let a = setTimeout(()=>{
+            //     document.querySelector(".childcontainer").style.background= getRandomCOlor()
+            // },1000);
+            // console.log(a)
+            // to undo write clearTimeout(1)
+       
+
+        
+        </script>
+
+
+
+   
+</body>
+</html>
