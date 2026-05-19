@@ -7,7 +7,16 @@
 </head>
 <body>
     <div class="container">
+        <div class="box" style="display:flex;" data-createdby="Ayushi" data-conceptby = "me" ></div>
         <div class="box">hey i am a Box</div>
+        <script>
+            let div = document.createElement("div");
+            div.innerHTML="I have been inserted <b> By Ayushi</b>"
+            div.setAttribute("class","created");
+            document.querySelector(".container").before(div);
+            let cont = document.querySelector(".container")
+            cont.insertAdjacentHTML("afterend","<b> hehe</b> ahhah")
+        </script>
     </div>
     
 </body>
