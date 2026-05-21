@@ -17,3 +17,14 @@ console.log(money.slice(15))
 //or
 let amount = money.trim().split(" ")[3];
 console.log(amount);
+//or
+let amount1 = money.match(/\d+/)[0];
+console.log(amount1);
+//✔️ \d+ → finds one or more digits
+//✔️ [0] → gets the matched value
+
+
+//Q. Try to Change 4th charater of a given string. Were you able to do it.
+let given = "ayushi";
+let newGiven = given.replace("s" ,  "h");
+console.log(newGiven)
