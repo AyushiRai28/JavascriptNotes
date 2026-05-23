@@ -1,0 +1,82 @@
+<!-- Create a website which is capable of storing bookmarks of your foverite websites using href -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmark Manager</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+        }
+        button {
+            padding: 8px 12px;
+        }
+        li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>My Bookmark Manager</h2>
+
+    <input type="text" id="siteName" placeholder="Website Name">
+    <input type="url" id="siteURL" placeholder="https://example.com">
+    <button onclick="addBookmark()">Add Bookmark</button>
+
+    <ul id="bookmarkList"></ul>
+
+    <script>
+        let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+        function displayBookmarks() {
+            let list = document.getElementById("bookmarkList");
+            list.innerHTML = "";
+
+            bookmarks.forEach((bookmark, index) => {
+                let li = document.createElement("li");
+
+                li.innerHTML = `
+                    <a href="${bookmark.url}" target="_blank">${bookmark.name}</a>
+                    <button onclick="deleteBookmark(${index})">Delete</button>
+                `;
+
+                list.appendChild(li);
+            });
+        }
+
+        function addBookmark() {
+            let name = document.getElementById("siteName").value;
+            let url = document.getElementById("siteURL").value;
+
+            if (name === "" || url === "") {
+                alert("Please fill all fields");
+                return;
+            }
+
+            bookmarks.push({ name, url });
+            localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+
+            displayBookmarks();
+
+            document.getElementById("siteName").value = "";
+            document.getElementById("siteURL").value = "";
+        }
+
+        function deleteBookmark(index) {
+            bookmarks.splice(index, 1);
+            localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+            displayBookmarks();
+        }
+
+        // Load bookmarks on page load
+        displayBookmarks();
+    </script>
+
+</body>
+</html>
