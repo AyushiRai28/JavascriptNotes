@@ -23,7 +23,7 @@ let prom2 = new Promise((resolve, reject) =>{
     else{setTimeout(() => {
         console.log("Yes I am done 2")
         resolve("harry 2")
-    },1000);}
+    },1500);}
 })
 
 let p3 = Promise.all([prom1 , prom2])
