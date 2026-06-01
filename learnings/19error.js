@@ -18,3 +18,4 @@ try {
     console.log("error aa gya bhaiii")
 }    
 
+finally{console.log("Files are being closed and db connection is being closed...")}
