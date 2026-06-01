@@ -31,5 +31,18 @@ class Animal{
     }
 }
 
+class Lion extends Animal{
+    constructor(name){
+        super(name)//calling the construstor of animal , warna error dega
+        console.log("Its a lion .. BHAGO")  
+    }
+
+    eats(){
+        super.eats()
+        console.log("non veg kha rha hu")}
+
+}
 let a = new Animal("bunny");
 console.log(a)
+let l = new Lion("Sher")
+console.log(l)
