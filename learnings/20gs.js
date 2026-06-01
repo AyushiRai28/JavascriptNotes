@@ -1,4 +1,4 @@
-class user{
+class User{
     constructor(name){
         //invokes the setter
         this.name = name;
@@ -16,3 +16,9 @@ class user{
         this._name = value;
     }
 }
+
+let user = new User("John");
+console.log(user.name);//John
+
+user.name = "ayushi";
+console.log(user.name)
