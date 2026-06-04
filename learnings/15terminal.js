@@ -1,6 +1,12 @@
 setInterval(() => {
-    
-}, 7000);
+    let last = document.body.lastElementChild;
+    if(last.innerHTML.endsWith("...")){
+        last.innerHTML = last.innerHTML.slice(0, last.innerHTML.length-3)
+    }
+    else{
+    last.innerHTML = last.innerHTML + "."
+    }
+}, 100);
 
 const addItem = async (item)=>{
     await randomDelay();
@@ -30,5 +36,8 @@ const run = async () => {
         await addItem(item);
     }
 }
+
+// await randomDelay()
+// clearInterval(t)
 run();
 
