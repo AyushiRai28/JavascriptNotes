@@ -1,0 +1,1 @@
+//The Password Validator: you are building a password validation feature . Create a function that checks if a given password meets the following criteria : at least 8 characters long, contains both uppercaseand lowercase letter, and includes at least one digit.
